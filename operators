@@ -1,0 +1,16 @@
+Operators	Precedence
+23 postfix		expr++ expr--
+22 unary		++expr --expr +expr -expr ~ !
+21 multiplicative	* / %
+20 additive	+ -
+19 shift		<< >> >>>
+18 relational	< > <= >= instanceof
+17 equality	== !=
+16 bitwise 	AND	&
+15 bitwise 	exclusive OR	^
+14 bitwise 	inclusive OR	|
+13 logical AND	and
+12 logical OR	or
+11 ternary		? :
+10 assignment	= += -= *= /= %= &= ^= |= <<= >>= >>>=
+

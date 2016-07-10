@@ -1,0 +1,56 @@
+
+primitive
+	byte
+	int
+	long
+	float
+	double
+
+number
+	primitive
+
+type
+	primitive
+	class
+
+comment
+	# <any except newline> <newline>
+	/ * <any> * /
+
+func_def
+	def identifier ( arguments? ) <newline> func_body
+
+lambda_def
+	def ( arguments? ) expression
+	def ( arguments? ) <newline> func_body
+
+func_body
+	(<indent> expression <newline>)+
+
+class_def
+	def identifier <newline> class_body
+
+class_body
+	(<indent> (field_def | method_def) <newline>)*
+
+field_def
+	identifier type ( = expression )?
+
+method_def
+	func_def
+
+rval
+	expr
+	equality
+
+equality
+	expr == expr
+	expr != expr
+
+assignment
+	lval = rval
+
+ternary
+	bool ? expr : expr
+
+

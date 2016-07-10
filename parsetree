@@ -1,0 +1,48 @@
+# <text> <newline>
+
+def				-> <def>
+
+<def> <identifier>
+		(		-> <func-args>
+		<newline>	-> <type-body>
+
+<lambda> (			-> <lambda-args>
+
+<lambda-args>
+	<identifier> <identifier>
+		<comma>		-> <lambda-args>
+		)
+			{ <newline>	-> <lambda-body>
+			<expression> <newline>	~ <lambda-def>
+
+<func-args>
+	<identifier> <identifier>
+		<comma>		-> <func-args>
+		)		-> <func-body>
+
+<func-body>
+	<indent> <expression> <newline>	-> <func-body>
+	<newline>		~ <func-def>
+
+<lambda-body>
+	<indent> <expression> <newline> -> <lambda-body>
+	}			~ <lambda-def>
+
+<type-body>
+	<ident>
+		<identifier> <identifier> <newline>
+		def		-> <def>
+	<newline>		~ <type-def>
+
+if <expression> <newline>	-> <if-body>
+
+<if-body>
+	<indent> <expression> <newline>	-> <if-body>
+	elif <expression> <newline>	-> <elif-body>
+	else <newline>		-> <else-body>
+
+<elif-body>
+	<indent> <expression> <newline>	-> <elif-body>
+	else <newline>		-> <else-body>
+
+

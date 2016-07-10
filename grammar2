@@ -1,0 +1,106 @@
+IDENTIFIER
+	(?<identifier>\p{L}\w*)
+
+KEYWORD:
+	and
+	as
+	class
+	continue
+	def
+	del
+	elif
+	else
+	except
+	exec
+	finally
+	for
+	from
+	global
+	if
+	import
+	in
+	is
+	lambda
+	not
+	or
+	pass
+	print
+	raise
+	return
+	try
+	while
+	with
+	yield
+	
+LITERAL:
+	string
+	numeric
+
+string
+	#TODO
+
+numeric:
+	long
+	int
+	float
+	double
+
+long
+	[123456789][0123456789]*L
+int:
+	bin	0[bB][01]+
+	oct	0o[01234567]+
+	dec	[123456789][0123456789]*
+	hex	0[xX][0123456789abcdefABCDEF]+
+
+OPERATOR
+	+
+	-
+	*
+	**
+	/
+	//
+	%
+	<<
+	>>
+	&
+	|
+	^
+	~
+	<
+	>
+	<=
+	>=
+	==
+	!=
+	<>
+
+DELIMITER
+	(
+	)
+	[
+	]
+	{
+	}
+	@
+	,
+	:
+	::
+	.
+	`
+	=
+	;
+	+=
+	-=
+	*=
+	/=
+	//=
+	%=
+	&=
+	|=
+	^=
+	>>=
+	<<=
+	**=
+
+

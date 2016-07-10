@@ -1,0 +1,38 @@
+strict digraph G {
+	
+	start -> "#"
+	subgraph Comment {
+		rank=same
+		"#" -> comm_any -> "\\n" -> comment -> start;
+	}
+	
+	start -> def
+	type0 -> "," -> arg0
+	subgraph "Func def" {
+		rank=same
+		def -> "\\w" -> def_func_ob -> { arg0 def_func_cb}
+		arg0 -> type0 -> def_func_cb -> def_func_newline -> { func_body_indent def_func_end }
+		def_func_end -> func
+		func_body_indent
+	}
+	
+	
+	start -> def -> def_anf_ob -> arg1 -> type1
+
+	start [shape=none]
+	comm_any [label="*"]
+	comment [shape=doublecircle]
+	def_func_ob [label="("]
+	arg0 [label="\\w"]
+	type0 [label="\\w"]
+	def_func_cb [label=")"]
+	def_func_newline [label="\\n"]
+	def_func_end [label="\\n"]
+	func_body_indent [label="\\t"]
+	func [shape=doublecircle]
+	
+	def_anf_ob [label="("]
+	arg1 [label="\\w"]
+	type1 [label="\\w"]
+}
+
